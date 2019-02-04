@@ -111,6 +111,60 @@
 
                 <section>
                     <section>
+                        <h3>Evaluation</h3>
+                        <img src="images/deuxsurvingt.jpg" class="imgNoDecorate" width="400"/>
+                    </section>
+                    <section>
+                        <h3>Evaluation</h3>
+                        <ul>
+                            <li>1 DS (35 %)</li>
+                            <li>1 projet de groupe 3 ou 4 personnes (35 %)</li>
+                            <li>1 examen de 2h (30%)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Planning</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Samedi 09/02 9h à 12h</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Vendredi 15/02 de 13h à 16h</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Samedi 16/02 de 9h à 12h</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Vendredi 01/03 de 9h à 12h</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Vendredi 01/03 de 13h à 16h ???</td>
+                                    <td><b style="color : red;">DS</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Samedi 02/03 de 9h à 12h</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Vendredi 08/03 de 9h à 12h</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Samedi 09/03 de 9h à 12h</td>
+                                    <td><b style="color : red">Soutenance</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
                         <h3>Comment estimez vous votre niveau en JavaScript?</h3>
 
                         <img src="images/section0/niveau.png" class="imgNoDecorate" width="400"/>
@@ -148,21 +202,9 @@
                     <section>
                         <h3>Nous comptons sur </h3>
                         <ul>
-                           <li class="fragment">Votre assiduité 
-                                <ul>
-                                    <li>Porte fermée 15 minutes après le début du cours</li>
-                                </ul>
-                            </li>
-                            <li class="fragment">Votre attention 
-                                <ul>
-                                    <li>Utile pour la partie pratique du cours et les rendus</li>
-                                </ul>
-                            </li>
-                            <li class="fragment">Votre participation 
-                                <ul>
-                                    <li>N’hésitez pas à poser des questions</li>
-                                </ul>
-                            </li>
+                           <li>Votre assiduité <br/><br/></li>
+                           <li>Votre attention  <br/><br/></li>
+                           <li>Votre participation <br/><br/></li>
                         </ul>
 
                         <aside class="notes">
@@ -393,7 +435,7 @@
                         <h3>La structure d'un script</h3>
                         <ul>
                             <li>JavaScript est directement intégré au code HTML de la page. Le navigateur reconnaît les zones de script grâce aux balises "script" qui 
-                                identifient un bloc de script</li>
+                                identifiant un bloc de script</li>
                         </ul>
                         <pre>
                             <code class="Bash" data-trim>
@@ -545,36 +587,6 @@
                 <section>
                     <section>
                         <h3>Les Bases de JavaScript</h3>
-                        <h4>Les objets</h4>
-                    </section>
-
-                    <section>
-                        <h3>Constructeur avec trois propriété et une méthode</h3>
-                        <pre>
-                            <code class="Bash" data-trim>
-                                <script type="text/javascript">
-                                    function Chien(txtNom, txtRace, txtMaitre){
-                                        this.nom = txtNom;
-                                        this.race = txtRace;
-                                        this.maitre = txtMaitre;
-                                        this.print = affChien;
-                                    }
-
-                                    function affChien(){
-                                        document.write("Ce chien s'appelle " + this.nom + " de race "+ this.race + ". Il appartient à "+ this.maitre +".");
-                                    }
-
-                                    var chien = new Chien("milou","bichon","tintin");
-                                    chien.print();
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h3>Les Bases de JavaScript</h3>
                         <h4>Les tests conditionnels</h4>
                         <img src="images/section3/conditions.png" class="imgNoDecorate" width="500"/>
                     </section>
@@ -631,6 +643,219 @@
                                         default:
                                             document.write("default")
                                             break;
+                                    }
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Les bases de JavaScript</h3>
+                        <h4>Les boucles</h4>
+                        <img src="images/section3/boucles.png" class="imgNoDecorate" width="500"/>
+                    </section>
+
+                    <section>
+                        <h3>La boucle for</h3>
+                        <p>L'instruction <i>for</i> est la plus utilisée des instructions de boucle. Elle permet de répéter un groupe d'instructions tout en 
+                        incrémentant une variable ou un compteur. La syntaxe générale d'une boucle <i>for</i> est la suivante :</p>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                <script type="text/javascript">
+                                    for(Initialisation du compteur; condition autorisant la répétition;
+                                         progression du compteur){
+                                        ....
+                                    }
+
+                                    //Exemple de for
+                                    for(var compteur = 0;compteur <= 100;compteur++){
+                                        ....
+                                    }
+                                </script>
+                            </code>
+                        </pre>
+
+                        <aside class="notes">
+                            <p>La boucle <i>for</i> est appelée "<i>boucle itérative</i>", car elle est basée sur un compteur qui s'incrémente. Une 
+                            exécution de la boucle est appelée "<i>itération</i>"</p>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h3>Les boucles conditionnelles</h3>
+                        <p>La boucle "<i>tant que</i>" est exécutée tant qu'une condition est vraie. Elle est définie par l'instruction <i>while</i> dont la 
+                            forme générale est:</p>
+                            <pre>
+                                <code class="Bash" data-trim>
+                                    <script type="text/javascript">
+                                        while(condition){
+                                            //Les instructions de la boucle
+                                        }
+                                    </script>
+                                </code>
+                            </pre>
+                    </section>
+
+                    <section>
+                        <h3>Les boucles conditionnelles</h3>
+                        <p>Il existe un troisième type de boucle, légèrement différente de la boucle "<i>tant que</i>". Le test de condition s'effectue après
+                        l'exécution du bloc de la boucle. La forme générale de la boucle <i>do</i> est</p>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                <script type="text/javascript">
+                                    var somme = 0;
+                                    var N = 0;
+                                    do{
+                                        N++;
+                                        somme = somme+N
+                                        // On peut aussi écrire
+                                        somme += N;
+                                    }while(somme < 100)
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Les bases de JavaScript</h3>
+                        <h4>Les fonctions</h4>
+                        <img src="images/section3/fonctions.jpg" class="imgNoDecorate" width="500"/>
+                    </section>
+                    <section>
+                        <h3>Les fonctions</h3>
+                        <p>Les fonctions sont également un moyen de coder une seule fois une fonctionnalité et de réutiliser ce code simplement en cas de besoin. Les 
+                            fonctions sont à la base du développement durable. On parle beaucoup de "<i>réutilisabilité</i>" en programmation.
+                        </p>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                <script type="text/javascript">
+                                    function nomDeLaFonction (parametre1, ..., parametreN){
+                                        ...
+                                    }
+
+                                    //Exemple
+                                    function getPluriel(nb){
+                                        return (nb > 1) ? "s" : ""; 
+                                    }
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Les Bases de JavaScript</h3>
+                        <h4>Les objets</h4>
+                    </section>
+
+                    <section>
+                        <h3>Constructeur avec trois propriété et une méthode</h3>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                <script type="text/javascript">
+                                    function Chien(txtNom, txtRace, txtMaitre){
+                                        this.nom = txtNom;
+                                        this.race = txtRace;
+                                        this.maitre = txtMaitre;
+                                        this.print = affChien;
+                                    }
+
+                                    function affChien(){
+                                        document.write("Ce chien s'appelle " + this.nom + " de race "+ this.race + ". Il appartient à "+ this.maitre +".");
+                                    }
+
+                                    var chien = new Chien("milou","bichon","tintin");
+                                    chien.print();
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Les bases de JavaScript</h3>
+                        <h4>La manipulation Dynamique des documents</h4>
+                    </section>
+                    <section>
+                        <h3>DHTML</h3>
+                        <p>En programmation DHTML, Java manipule le DOM (<i>modèle de document objet</i>). Le DOM est en fait une vision objet de l'arborescence
+                        du code HTML d'une page web. Chaque objet crée un nouveau noeud (<i>node</i>) de l'arborescence du document.</p>
+                    </section>
+                    <section>
+                        <h3>DHTML</h3>
+                        <p>Les possibilités du DHTML sont :</p>
+                        <ul>
+                            <li>cacher et montrer les élements d'une page</li>
+                            <li>positionner et déplacer les élements d'une page</li>
+                            <li>modifier les paramètres de style d'un élement (couleur, police, taille, etc...)</li>
+                            <li>modfier le contenu d'un élement HTML</li>
+                            <li>repérer et trouver des élements dans un document</li>
+                            <li>glisser-déplacer un élement</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>L'objet document</h3>
+                        <p>L'objet <i>document</i> est la base de la programmation DHTML, qui consiste à manipuler les élements de la page. Il permet d'accéder
+                        à tous les éléments de la page et ainsi de modifier leurs attributs</p>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                <script type="text/javascript">
+                                    //contrôle de la comptabilité du DOM
+                                    if(document.getElementById){
+                                        //navigateur compatible
+                                    }else{
+                                        alert("Utiliser un navigateur de nouvelle génération");
+                                    }
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Les autres méthodes d'accées aux élements</h3>
+                        <ul>
+                            <li>la méthode <i>getElementsByName</i> attend en paramètre le nom des éléments et retourne un tableau des éléments HTML trouvés dans le
+                            document. Le nom de l'élément correspond au nom de l'attribut <i>name</i> dans la balise.</li>
+                            <li>la méthode <i>getElementById</i> ne retourne qu'un seul objet car la norme interdit dans une même page plusieurs éléments ayant
+                            le même identifiant</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Les autres méthodes d'accées aux élements</h3>
+                        <ul>
+                            <li>la méthode <i>getElementsByTagName</i> retourne un tableau des éléments repérés par leur type de balise <i>tag</i>. Le paramètre
+                                est une chaîne de caractères qui contient le nom de la balise.</li>
+                        </ul>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                <script type="text/javascript">
+                                    document.getElementsByTagName("img");
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Le contenu HTML d'un élément</h3>
+                        <p>DHTML permet de modifier le contenu HTML d'un élément. Par programmation, la page peut changer de contenu. La propriété <i>innerHTML</i>
+                        contient le code HTML de l'élément. Elle est accessible en lecture et en écriture. Il est donc possible de modifier dynamique le contenu
+                        d'un élément.</p>
+                    </section>
+                    <section>
+                        <h3>La propriété className</h3>
+                        <p>La propriété <i>className</i> contient le nom de la classe affecté à un élement dans son attribut <i>class</i>. Cette propriété est 
+                        accessible en écriture et en lecture comme le montre ce script</p>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                <script type="text/javascript">
+                                    function survolLigne(ligne){
+                                        if(ligne.className != "trSelectionne"){
+                                            ligne.className = "trSurbrillance";
+                                        }
                                     }
                                 </script>
                             </code>
