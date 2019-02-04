@@ -95,7 +95,7 @@
                         <h3>Youri ESCHENBRUMER</h3>
 
                         <ul>
-                            <li>ISEN Brest, Diplôme d'ingénieur, Génie logiciel</li>
+                            <li>YNCREA, Diplôme d'ingénieur, Génie logiciel</li>
                             <li>Ingénieur d'études chez Proxiad depuis 2017</li>
                             <img src="images/proxiad.jpg" class="imgNoDecorate" width="200"/>
                             <li>Ingénieur d'études et développement Customer Engagement chez Adeo  <img src="images/section0/Logo_adeo-LM.jpg" class="imgNoDecorate" width="200"/></li>
@@ -299,7 +299,7 @@
                                 <ul>
                                     <li>Il ne peut pas accéder par lui-même aux informations du serveur.</li>
                                     <li>Il ne peut pas, non plus, lire ou écrire dans la base de données.</li>
-                                    <li>Seul, il ne permet pas de créer des sites dits "Dynamique". Un lanage serveur est obligatoire pour qu'il soit possible de fournir
+                                    <li>Seul, il ne permet pas de créer des sites dits "Dynamique". Un langage serveur est obligatoire pour qu'il soit possible de fournir
                                         ces fonctionnalités dynamiques.
                                     </li>
                                 </ul>
@@ -501,39 +501,9 @@
                 <section>
                     <section>
                         <h3>Les Bases de JavaScript</h3>
-                        <h4>Les objets</h4>
-                    </section>
-
-                    <section>
-                        <h3>Constructeur avec trois propriété et une méthode</h3>
-                        <pre>
-                            <code class="Bash" data-trim>
-                                <script type="text/javascript">
-                                    function Chien(txtNom, txtRace, txtMaitre){
-                                        this.nom = txtNom;
-                                        this.race = txtRace;
-                                        this.maitre = txtMaitre;
-                                        this.print = affChien;
-                                    }
-
-                                    function affChien(){
-                                        document.write("Ce chien s'appelle " + this.nom + " de race "+ this.race + ". Il appartient à "+ this.maitre +".");
-                                    }
-
-                                    var chien = new Chien("milou","bichon","tintin");
-                                    chien.print();
-                                </script>
-                            </code>
-                        </pre>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h3>Les Bases de JavaScript</h3>
                         <h4>Les tableaux</h4>
                     </section>
-                    
+
                     <section>
                         <h3>Déclaration de tableau</h3>
                         <pre>
@@ -569,6 +539,36 @@
                             <li><i>splice()</i> écrase une tranche d'un tableau.</li>
                             <li><i>unshit()</i> insère des élements en début de tableau.</li>
                         </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Les Bases de JavaScript</h3>
+                        <h4>Les objets</h4>
+                    </section>
+
+                    <section>
+                        <h3>Constructeur avec trois propriété et une méthode</h3>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                <script type="text/javascript">
+                                    function Chien(txtNom, txtRace, txtMaitre){
+                                        this.nom = txtNom;
+                                        this.race = txtRace;
+                                        this.maitre = txtMaitre;
+                                        this.print = affChien;
+                                    }
+
+                                    function affChien(){
+                                        document.write("Ce chien s'appelle " + this.nom + " de race "+ this.race + ". Il appartient à "+ this.maitre +".");
+                                    }
+
+                                    var chien = new Chien("milou","bichon","tintin");
+                                    chien.print();
+                                </script>
+                            </code>
+                        </pre>
                     </section>
                 </section>
 
