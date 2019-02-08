@@ -26,7 +26,7 @@
 
 		<!-- Printing and PDF exports -->
 		<script>
-			var link = document.createElement( 'link' );
+			let link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'libs/reveal.js/css/print/pdf.css' : 'libs/reveal.js/css/print/paper.css';
@@ -480,9 +480,9 @@
                         <pre>
                             <code class="Bash" data-trim>
                                 <script type="text/javascript">
-                                    var compteur = 0;
-                                    var monTexte = "Ceci est mon super texte...";
-                                    var prixTotal = 12.5;
+                                    let compteur = 0;
+                                    const monTexte = "Ceci est mon super texte...";
+                                    let prixTotal = 12.5;
                                 </script>
                             </code>
                         </pre>
@@ -493,8 +493,8 @@
                         <pre>
                             <code class="Bash" data-trim>
                                 <script type="text/javascript">
-                                    var compteur;
-                                    var prixTotal;
+                                    let compteur;
+                                    let prixTotal;
                                 </script>
                             </code>
                         </pre>
@@ -502,7 +502,7 @@
                         <pre>
                             <code class="Bash" data-trim>
                                 <script type="text/javascript">
-                                    var compteur = 0, prixTotal = 12.5;
+                                    let compteur = 0, prixTotal = 12.5;
                                 </script>
                             </code>
                         </pre>
@@ -553,10 +553,10 @@
                         <pre>
                             <code class="Bash" data-trim>
                                 <script type="text/javascript">
-                                  var array = new Array("chien","chat","oiseaux");
-                                  var array = ["chien","chat","oiseaux"];
+                                  let array = new Array("chien","chat","oiseaux");
+                                  let array = ["chien","chat","oiseaux"];
 
-                                  var array = new Array();
+                                  let array = new Array();
                                   array["chien"] = "chien";
                                 </script>
                             </code>
@@ -597,8 +597,8 @@
                         <pre>
                             <code class="Bash" data-trim>
                                 <script type="text/javascript">
-                                    var prix = 100;
-                                    var prixTransport = 10;
+                                    const prixTotal = 100;
+                                    let prixTransport = 10;
                                     if(prixTotal > 50){
                                         prixTransport =prixTransport / 2;
                                     }
@@ -614,8 +614,8 @@
                         <pre>
                             <code class="Bash" data-trim>
                                 <script type="text/javascript">
-                                    var prix = 100;
-                                    var prixTransport = 10;
+                                    const prixTotal = 100;
+                                    let prixTransport = 10;
                                     if(prixTotal > 50){
                                         prixTransport = 5;
                                     }else{
@@ -624,6 +624,7 @@
 
                                     //opérateur ternaire
                                     prixTransport = (prixTotal > 50 ) ? 5 : 10;
+
                                 </script>
                             </code>
                         </pre>
@@ -634,7 +635,7 @@
                         <pre>
                             <code class="Bash" data-trim>
                                 <script type="text/javascript">
-                                    var compteur = 2;
+                                    let compteur = 2;
                                     switch (compteur) {
                                         case 1:
                                             document.write("Premier passage");
@@ -672,7 +673,7 @@
                                     }
 
                                     //Exemple de for
-                                    for(var compteur = 0;compteur <= 100;compteur++){
+                                    for(let compteur = 0;compteur <= 100;compteur++){
                                         ....
                                     }
                                 </script>
@@ -707,8 +708,8 @@
                         <pre>
                             <code class="Bash" data-trim>
                                 <script type="text/javascript">
-                                    var somme = 0;
-                                    var N = 0;
+                                    let somme = 0;
+                                    let N = 0;
                                     do{
                                         N++;
                                         somme = somme+N
@@ -771,7 +772,7 @@
                                         document.write("Ce chien s'appelle " + this.nom + " de race "+ this.race + ". Il appartient à "+ this.maitre +".");
                                     }
 
-                                    var chien = new Chien("milou","bichon","tintin");
+                                    let chien = new Chien("milou","bichon","tintin");
                                     chien.print();
                                 </script>
                             </code>
