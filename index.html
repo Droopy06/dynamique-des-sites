@@ -778,6 +778,28 @@
                             </code>
                         </pre>
                     </section>
+
+                    <section>
+                        <h3>Prototypage de fonction </h3>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                <script type="text/javascript">
+                                    let Car = function( model, wheel ) {
+                                        this.model = model;
+                                        this.wheel = wheel;
+                                        this.flightable = true;
+                                    };
+                                    Car.prototype.canFlight = function(){
+                                        document.write("flight :"+ this.flightable);
+                                    };
+
+                                    let porche = new Car("porche", 4);
+                                        porche.canFlight();
+
+                                </script>
+                            </code>
+                        </pre>
+                    </section>
                 </section>
 
                 <section>
