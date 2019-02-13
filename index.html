@@ -34,7 +34,7 @@
 		</script>
 
 		<!--[if lt IE 9]>
-		<script src="reveal-3.2.0/lib/js/html5shiv.js"></script>
+		<script src="libs/reveal.js/lib/js/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -934,8 +934,188 @@
                     </section>
                 </section>
 
+                <!-- *************************************************************** -->
+                <!-- 5 Ajax -->
+                <!-- *************************************************************** -->
                 <section>
-                    <h3>TODO</h3>
+                    <section>
+                        <h3>Ajax</h3>
+                        <h4>Ajax, qu'est ce que c'est ?</h4>
+                        <img src="images/section5/AJAX.png" class="imgNoDecorate">
+                    </section>
+                    <section>
+                        <h3>Ajax, qu'est ce que c'est ?</h3>
+                        <p>Pour expliquer le concept en quelques mots, il s'agit de permettre l'echange d'informations
+                        entre le navigateur web et le serveur web sans recharger l'ensemble de la page web utilisée.
+                         Ces échanges s'effectuent de façon asynchrone à l'aide de fonctions développées en langage
+                        JavaScript.</p>
+
+                        <aside class="notes">
+                            <p>Il ne s'agit pas donc pas d'une technologie proprement dite, mais de l'utilisation conjointes
+                            de technologies déjà existantes et courantes sur le web. (iframe)</p>
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Ajax</h3>
+                        <h4>Les requêtes Ajax sans JQuery</h4>
+                    </section>
+                    <section>
+                        <h3>Instancier l'objet XHR</h3>
+                        <pre>
+                            <code class="Bash"  data-trim>
+                                function getXMLHttpRequest() {
+                                    var xhr = null;
+
+                                    if (window.XMLHttpRequest || window.ActiveXObject) {
+                                        if (window.ActiveXObject) {
+                                            try {
+                                                xhr = new ActiveXObject("Msxml2.XMLHTTP");
+                                            } catch(e) {
+                                                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                                            }
+                                        } else {
+                                            xhr = new XMLHttpRequest();
+                                        }
+                                    } else {
+                                        alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+                                        return null;
+                                    }
+
+                                    return xhr;
+                                }
+                            </code>
+                        </pre>
+
+                        <aside class="notes">
+                            <p>Les versions d'Internet Explorer inférieures à la version 7 requièrent toujours une
+                                instanciation via un contrôle ActiveX. Il y a deux façons d'instancier un objet XHR
+                                avec un contrôle ActiveX et elles dépendent de la version d'XMLHTTP utilisée.
+                                Pour faire simple, on va utiliser un try...catch , l'instanciation indiquée dans le
+                                try étant la plus récente
+                            </p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h3>Envoi de la requête HTTP</h3>
+                        <p>Dans un premier temps, il faut définir les modalités d'envoi avec la méthode open , et on
+                            l'enverra ensuite avec la méthode send :
+                        </p>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                xhr.open("GET", "handlingData.php", true);
+                                xhr.send(null);
+
+                                xhr.open("POST", "handlingData.php", true);
+                                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                xhr.send("variable1=truc&variable2=bidule");
+                            </code>
+                        </pre>
+                        <aside class="notes">
+                            <p>i vous utilisez la méthode POST, vous devez absolument changer le type MIME de la requête
+                                avec la méthode setRequestHeader , sinon le serveur ignorera la requête </p>
+                        </aside>
+                    </section>
+                    <section>
+                        <h3>Récuperer les données</h3>
+                        <p>En vue de cela, il va donc nous falloir détecter les changements d'état pour savoir où en
+                            est la requête. Pour cela, on va utiliser la propriété onreadystatechange, et à chaque
+                            changement d'état (state en anglais), on regardera lequel il s'agit :</p>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                    var xhr = getXMLHttpRequest();
+
+                                    xhr.onreadystatechange = function() {
+                                        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+                                            alert(xhr.responseText); // Données textuelles récupérées
+                                        }
+                                    };
+
+                                    xhr.open("GET", "handlingData.php", true);
+                                    xhr.send(null);
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Le Callback</h3>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                function request(callback) {
+                                    var xhr = getXMLHttpRequest();
+
+                                    xhr.onreadystatechange = function() {
+                                        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+                                            callback(xhr.responseText);
+                                        }
+                                    };
+
+                                    xhr.open("GET", "handlingData.php", true);
+                                    xhr.send(null);
+                                }
+
+                                function readData(sData) {
+                                    // On peut maintenant traiter les données sans encombrer l'objet XHR.
+                                    if (sData == "OK") {
+                                        alert("C'est bon");
+                                    } else {
+                                        alert("Y'a eu un problème");
+                                    }
+                                }
+
+                                request(readData);
+                            </code>
+                        </pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h3>Ajax</h3>
+                        <h4>Ajax avec JQuery</h4>
+                    </section>
+                    <section>
+                        <h3>Ajax avec JQuery</h3>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                $.ajax({
+                                    url : 'chat.php',
+                                    type : 'POST', // Le type de la requête HTTP
+                                    dataType : 'html',
+                                    success : function(code_html, statut){ // success est toujours en place, bien sûr !
+
+                                    },
+                                    error : function(resultat, statut, erreur){
+
+                                    }
+                                });
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Ajax avec Jquery</h3>
+                        <pre>
+                            <code class="Bash" data-trim>
+                                $.post('chat.php', {
+                                    'nom': nom,
+                                    'message': message
+                                }, function(data){
+                                    ....
+                                });
+
+                                $.get(
+                                    'fichier_cible.php', // Le fichier cible côté serveur.
+                                    'false', // Nous utilisons false, pour dire que nous n'envoyons pas de données.
+                                    'nom_fonction_retour', // Nous renseignons uniquement le nom de la fonction de retour.
+                                    'text' // Format des données reçues.
+                                );
+
+                                function nom_fonction_retour(texte_recu){
+                                    // Du code pour gérer le retour de l'appel AJAX.
+                                }
+
+                            </code>
+                        </pre>
+                    </section>
                 </section>
                 <!-- *************************************************************** -->
                 <!-- FIN FORMATION ->
