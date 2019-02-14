@@ -276,7 +276,7 @@
                         <h3>Historique de JavaScript</h3>
                         <ul>
                             <li>JavaScript, et surtout l'utilisation qu'en font les responsables de sites web, a beaucoup évolué depuis sa sortie.<br/>
-                                Il y a quelques années encore,ce langage était utilisé essentiellement pour des annimations, lourdes et le plus souvent inutile.
+                                Il y a quelques années encore,ce langage était utilisé essentiellement pour des animations, lourdes et le plus souvent inutiles.
                             </li>
                             <li>Cette mauvaise réputation est aussi le résultat de son historique. En effet, ce langage a été enrichi progressivement au fur et mesure des besoins</li>
                         </ul>
@@ -318,7 +318,7 @@
                         <h3>Historique de JavaScript</h3>
                         <ul>
                             <li>La compatibilité entre les navigateurs s'est nettement améliorée depuis quelques annnées. Au début des années 2000, les deux principaux
-                                navigateurs, Intenet explorer 4 et 5 & Netscape v4, étaient totalement différents au niveau de leur interprétation JS. 
+                                navigateurs, Internet explorer 4 et 5 & Netscape v4, étaient totalement différents au niveau de leur interprétation JS.
                             </li>
                             <li>
                                 JavaScript est un langage de script.Il est interprété, c'est-à-dire que le script est lu, analysé et éxécuté directement depuis le code
@@ -336,11 +336,11 @@
                         <h3>Les limites de JavaScript</h3>
 
                         <ul>
-                            <li<>En tant que langage client, JavaScript est limité dans ses possibilités
+                            <li>En tant que langage client, JavaScript est limité dans ses possibilités
                                 <ul>
                                     <li>Il ne peut pas accéder par lui-même aux informations du serveur.</li>
                                     <li>Il ne peut pas, non plus, lire ou écrire dans la base de données.</li>
-                                    <li>Seul, il ne permet pas de créer des sites dits "Dynamique". Un langage serveur est obligatoire pour qu'il soit possible de fournir
+                                    <li>Seul, il ne permet pas de créer des sites dits "Dynamiques". Un langage serveur est obligatoire pour qu'il soit possible de fournir
                                         ces fonctionnalités dynamiques.
                                     </li>
                                 </ul>
@@ -356,7 +356,7 @@
                             <li>La sécurité des navigateurs vise à protéger:
                                 <ul>
                                     <li>La confidentialité des données du poste du visiteur</li>
-                                    <li>L'intégralité des données des autres sites consulutés.</li>
+                                    <li>L'intégralité des données des autres sites consultés.</li>
                                     <li>Le système d'exploitation</li>
                                 </ul>
                             </li>
@@ -434,7 +434,7 @@
                         <h3>La structure d'un script</h3>
                         <ul>
                             <li>JavaScript peut être directement intégré au code HTML de la page. Le navigateur reconnaît les zones de script grâce aux balises "script" qui 
-                                identifiant un bloc de script</li>
+                                identifient un bloc de script</li>
                         </ul>
                         <pre>
                             <code class="Bash" data-trim>
@@ -757,7 +757,7 @@
                     </section>
 
                     <section>
-                        <h3>Constructeur avec trois propriété et une méthode</h3>
+                        <h3>Constructeur avec trois propriétés et une méthode</h3>
                         <pre>
                             <code class="Bash" data-trim>
                                 <script type="text/javascript">
@@ -819,7 +819,7 @@
                             <li>cacher et montrer les élements d'une page</li>
                             <li>positionner et déplacer les élements d'une page</li>
                             <li>modifier les paramètres de style d'un élement (couleur, police, taille, etc...)</li>
-                            <li>modfier le contenu d'un élement HTML</li>
+                            <li>modifier le contenu d'un élement HTML</li>
                             <li>repérer et trouver des élements dans un document</li>
                             <li>glisser-déplacer un élement</li>
                         </ul>
@@ -851,7 +851,7 @@
                         </ul>
                     </section>
                     <section>
-                        <h3>Les autres méthodes d'accées aux élements</h3>
+                        <h3>Les autres méthodes d'accés aux élements</h3>
                         <ul>
                             <li>la méthode <i>getElementsByTagName</i> retourne un tableau des éléments repérés par leur type de balise <i>tag</i>. Le paramètre
                                 est une chaîne de caractères qui contient le nom de la balise.</li>
@@ -867,7 +867,7 @@
                     <section>
                         <h3>Le contenu HTML d'un élément</h3>
                         <p>DHTML permet de modifier le contenu HTML d'un élément. Par programmation, la page peut changer de contenu. La propriété <i>innerHTML</i>
-                        contient le code HTML de l'élément. Elle est accessible en lecture et en écriture. Il est donc possible de modifier dynamique le contenu
+                        contient le code HTML de l'élément. Elle est accessible en lecture et en écriture. Il est donc possible de modifier dynamiquement le contenu
                         d'un élément.</p>
                     </section>
                     <section>
@@ -945,9 +945,9 @@
                     </section>
                     <section>
                         <h3>Ajax, qu'est ce que c'est ?</h3>
-                        <p>Pour expliquer le concept en quelques mots, il s'agit de permettre l'échange d'informations
-                        entre le navigateur web et le serveur sans recharger l'ensemble de la page web utilisée.
-                         Ces échanges s'effectuent de façon asynchrone à l'aide de fonctions développées en
+                        <p>Pour expliquer le concept en quelques mots, il s'agit de permettre l'echange d'informations
+                        entre le navigateur web et le serveur web sans recharger l'ensemble de la page web utilisée.
+                         Ces échanges s'effectuent de façon asynchrone à l'aide de fonctions développées en langage
                         JavaScript.</p>
 
                         <aside class="notes">
@@ -966,7 +966,7 @@
                         <pre>
                             <code class="Bash"  data-trim>
                                 function getXMLHttpRequest() {
-                                    let xhr = null;
+                                    var xhr = null;
 
                                     if (window.XMLHttpRequest || window.ActiveXObject) {
                                         if (window.ActiveXObject) {
@@ -1024,7 +1024,7 @@
                             changement d'état (state en anglais), on regardera lequel il s'agit :</p>
                         <pre>
                             <code class="Bash" data-trim>
-                                    let xhr = getXMLHttpRequest();
+                                    var xhr = getXMLHttpRequest();
 
                                     xhr.onreadystatechange = function() {
                                         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
@@ -1042,7 +1042,7 @@
                         <pre>
                             <code class="Bash" data-trim>
                                 function request(callback) {
-                                    let xhr = getXMLHttpRequest();
+                                    var xhr = getXMLHttpRequest();
 
                                     xhr.onreadystatechange = function() {
                                         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
