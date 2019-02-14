@@ -945,9 +945,9 @@
                     </section>
                     <section>
                         <h3>Ajax, qu'est ce que c'est ?</h3>
-                        <p>Pour expliquer le concept en quelques mots, il s'agit de permettre l'echange d'informations
-                        entre le navigateur web et le serveur web sans recharger l'ensemble de la page web utilisée.
-                         Ces échanges s'effectuent de façon asynchrone à l'aide de fonctions développées en langage
+                        <p>Pour expliquer le concept en quelques mots, il s'agit de permettre l'échange d'informations
+                        entre le navigateur web et le serveur sans recharger l'ensemble de la page web utilisée.
+                         Ces échanges s'effectuent de façon asynchrone à l'aide de fonctions développées en
                         JavaScript.</p>
 
                         <aside class="notes">
@@ -966,7 +966,7 @@
                         <pre>
                             <code class="Bash"  data-trim>
                                 function getXMLHttpRequest() {
-                                    var xhr = null;
+                                    let xhr = null;
 
                                     if (window.XMLHttpRequest || window.ActiveXObject) {
                                         if (window.ActiveXObject) {
@@ -1024,7 +1024,7 @@
                             changement d'état (state en anglais), on regardera lequel il s'agit :</p>
                         <pre>
                             <code class="Bash" data-trim>
-                                    var xhr = getXMLHttpRequest();
+                                    let xhr = getXMLHttpRequest();
 
                                     xhr.onreadystatechange = function() {
                                         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
@@ -1042,7 +1042,7 @@
                         <pre>
                             <code class="Bash" data-trim>
                                 function request(callback) {
-                                    var xhr = getXMLHttpRequest();
+                                    let xhr = getXMLHttpRequest();
 
                                     xhr.onreadystatechange = function() {
                                         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
